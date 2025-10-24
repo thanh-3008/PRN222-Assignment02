@@ -1,0 +1,79 @@
+﻿@page "{id}"
+@model NguyenTrungThanhRazorPages.Pages.Staff.NewsManagement.DetailsModel
+@{
+    ViewData["Title"] = "Article Details";
+}
+
+<h1>Article Details</h1>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Title
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NewsArticle.NewsTitle)
+        </dd>
+
+        <dt class="col-sm-2">
+            Category
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NewsArticle.Category.CategoryName)
+        </dd>
+
+        <dt class="col-sm-2">
+            Tags
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.NewsArticle.NewsTags != null && Model.NewsArticle.NewsTags.Any())
+            {
+                foreach (var newsTag in Model.NewsArticle.NewsTags)
+                {
+                    <span class="badge bg-info me-1">@newsTag.Tag.TagName</span>
+                }
+            }
+            else
+            {
+                <span>No tags available.</span>
+            }
+        </dd>
+
+        <dt class="col-sm-2">
+            Created Date
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NewsArticle.CreatedDate?.ToString("dd/MM/yyyy HH:mm")
+        </dd>
+
+        <dt class="col-sm-2">
+            Created By
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NewsArticle.CreatedBy.AccountName)
+        </dd>
+
+        <dt class="col-sm-2">
+            Status
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.NewsArticle.NewsStatus == true)
+            {
+                <span class="text-success fw-bold">Active</span>
+            }
+            else
+            {
+                <span class="text-secondary">Inactive</span>
+            }
+        </dd>
+    </dl>
+    <hr />
+    <h4>Content</h4>
+    <div>
+        @Html.Raw(Model.NewsArticle.NewsContent?.Replace("\n", "<br />"))
+    </div>
+</div>
+<div class="mt-4">
+    <a asp-page="./Edit" asp-route-id="@Model.NewsArticle.NewsArticleId" class="btn btn-primary">Edit</a>
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>

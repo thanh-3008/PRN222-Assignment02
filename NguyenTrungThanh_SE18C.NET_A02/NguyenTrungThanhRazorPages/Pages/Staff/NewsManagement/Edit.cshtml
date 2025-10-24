@@ -1,0 +1,64 @@
+﻿@page "{id}"
+@model NguyenTrungThanhRazorPages.Pages.Staff.NewsManagement.EditModel
+@{
+    ViewData["Title"] = "Edit News Article";
+}
+
+<h1>Edit Article</h1>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <input type="hidden" asp-for="NewsArticle.NewsArticleId" />
+            <input type="hidden" asp-for="NewsArticle.CreatedDate" />
+            <input type="hidden" asp-for="NewsArticle.CreatedById" />
+
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.NewsTitle" class="control-label"></label>
+                <input asp-for="NewsArticle.NewsTitle" class="form-control" />
+                <span asp-validation-for="NewsArticle.NewsTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.Headline" class="control-label"></label>
+                <input asp-for="NewsArticle.Headline" class="form-control" />
+                <span asp-validation-for="NewsArticle.Headline" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.NewsContent" class="control-label"></label>
+                <textarea asp-for="NewsArticle.NewsContent" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="NewsArticle.NewsContent" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.CategoryId" class="control-label"></label>
+                <select asp-for="NewsArticle.CategoryId" class="form-control" asp-items="Model.CategoryList"></select>
+                <span asp-validation-for="NewsArticle.CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="TagsString" class="control-label">Tags (cách nhau bởi dấu phẩy)</label>
+                <input asp-for="TagsString" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="NewsArticle.NewsStatus" /> @Html.DisplayNameFor(model => model.NewsArticle.NewsStatus)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

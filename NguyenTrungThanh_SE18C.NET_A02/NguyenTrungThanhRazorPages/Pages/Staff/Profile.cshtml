@@ -1,0 +1,46 @@
+﻿@page
+@model NguyenTrungThanhRazorPages.Pages.Staff.ProfileModel
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @TempData["Message"]
+            </div>
+        }
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Account.AccountId" />
+            <input type="hidden" asp-for="Account.AccountPassword" />
+            <input type="hidden" asp-for="Account.AccountRole" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Account.AccountName" class="control-label"></label>
+                <input asp-for="Account.AccountName" class="form-control" />
+                <span asp-validation-for="Account.AccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Account.AccountEmail" class="control-label"></label>
+                <input asp-for="Account.AccountEmail" class="form-control" readonly />
+                <span asp-validation-for="Account.AccountEmail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

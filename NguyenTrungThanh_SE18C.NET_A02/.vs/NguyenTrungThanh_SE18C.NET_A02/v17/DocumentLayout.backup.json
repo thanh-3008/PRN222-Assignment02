@@ -1,0 +1,38 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\PRN222 Loyal (1)\\PRN222 Loyal\\Assignment 2\\NguyenTrungThanh_SE18C.NET_A02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99D51FA9-179B-EB69-B211-DCA965426FFE}|NguyenTrungThanhRazorPages\\NguyenTrungThanhRazorPages.csproj|c:\\users\\admin\\downloads\\prn222 loyal (1)\\prn222 loyal\\assignment 2\\nguyentrungthanh_se18c.net_a02\\nguyentrungthanhrazorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{99D51FA9-179B-EB69-B211-DCA965426FFE}|NguyenTrungThanhRazorPages\\NguyenTrungThanhRazorPages.csproj|solutionrelative:nguyentrungthanhrazorpages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\PRN222 Loyal (1)\\PRN222 Loyal\\Assignment 2\\NguyenTrungThanh_SE18C.NET_A02\\NguyenTrungThanhRazorPages\\appsettings.json",
+              "RelativeDocumentMoniker": "NguyenTrungThanhRazorPages\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\PRN222 Loyal (1)\\PRN222 Loyal\\Assignment 2\\NguyenTrungThanh_SE18C.NET_A02\\NguyenTrungThanhRazorPages\\appsettings.json",
+              "RelativeToolTip": "NguyenTrungThanhRazorPages\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAACEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-20T02:30:06.64Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

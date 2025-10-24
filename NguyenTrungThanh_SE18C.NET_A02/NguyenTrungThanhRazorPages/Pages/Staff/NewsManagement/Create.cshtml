@@ -1,0 +1,51 @@
+﻿@page
+@model NguyenTrungThanhRazorPages.Pages.Staff.NewsManagement.CreateModel
+@{
+    ViewData["Title"] = "Create News Article";
+}
+
+<h1>Create New Article</h1>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.NewsTitle" class="control-label"></label>
+                <input asp-for="NewsArticle.NewsTitle" class="form-control" />
+                <span asp-validation-for="NewsArticle.NewsTitle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.NewsContent" class="control-label"></label>
+                <textarea asp-for="NewsArticle.NewsContent" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="NewsArticle.NewsContent" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NewsArticle.CategoryId" class="control-label"></label>
+                <select asp-for="NewsArticle.CategoryId" class="form-control" asp-items="Model.CategoryList">
+                    <option value="">-- Select Category --</option>
+                </select>
+                <span asp-validation-for="NewsArticle.CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="TagsString" class="control-label">Tags (cách nhau bởi dấu phẩy)</label>
+                <input asp-for="TagsString" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
